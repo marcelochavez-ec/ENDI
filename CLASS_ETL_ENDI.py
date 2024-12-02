@@ -132,3 +132,5 @@ class ETL_ENDI:
             return tabulate(datos_verticales, headers=["Campo", "Valor"], tablefmt="fancy_grid", numalign="center")
         else:
             return f"No se encontraron resultados para la variable '{variable}'."
+
+
