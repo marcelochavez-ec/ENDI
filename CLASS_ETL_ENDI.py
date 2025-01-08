@@ -133,4 +133,12 @@ class ETL_ENDI:
         else:
             return f"No se encontraron resultados para la variable '{variable}'."
 
-
+    def consulta_sql(self, query):
+        """Ejecutar una consulta SQL en la base de datos PostgreSQL y devolver los resultados como un DataFrame."""
+        try:
+            # Ejecutar la consulta y devolver los resultados como un DataFrame
+            df_resultado = pd.read_sql(query, self.engine)
+            return df_resultado
+        except Exception as e:
+            print(f"Error al ejecutar la consulta SQL: {e}")
+            return None
